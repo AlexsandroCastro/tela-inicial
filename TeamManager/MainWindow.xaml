@@ -1,0 +1,52 @@
+﻿<Window x:Class="TeamManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeamManager"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        
+        Title="Login" Height="500" Width="350" ResizeMode="NoResize" WindowStyle="None" >
+    <Grid>
+        <Rectangle Height="280" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5FA660"/>
+                    <GradientStop Color="#FF158C09" Offset="1"/>
+                    <GradientStop Color="#FF35962F" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Source="Assets/TeamManager.png" Height="100" Width="100" VerticalAlignment="Top" Margin="20"/>
+        <Rectangle Width="280" Height="240" Fill="White" VerticalAlignment="Bottom" Margin="0,100" RenderTransformOrigin="0.5,0.5" RadiusX="24.937" RadiusY="24.937">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.022"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFBBBBBB" Direction="0" BlurRadius="15" RenderingBias="Quality" ShadowDepth="1" />
+            </Rectangle.Effect>
+        </Rectangle>
+        <Grid Width="280" Height="240" VerticalAlignment="Bottom" Margin="0,100">
+            <TextBlock Text="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Foreground="Gray" FontSize="18"/>
+            <StackPanel VerticalAlignment="Center" Margin="10">
+                <TextBox x:Name="txbNome"  materialDesign:HintAssist.Hint="EMAIL" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10" Text="{Binding nome}" TextChanged="txbNome_TextChanged"/>
+                <TextBox x:Name="txbTokken" materialDesign:HintAssist.Hint="SENHA" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10" Text="{Binding tokken}"/>
+            </StackPanel>
+        </Grid>
+        <Button x:Name="ButtonLogin" VerticalAlignment="Bottom" Margin="0,85" Width="150" Content="Login" Background="#FF4ABA43" Click="ButtonLogin_Click"/>
+        <TextBlock Text="ESQUECEU A SENHA?" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="50" Foreground="Gray" Cursor="Hand"/>
+    </Grid>
+</Window>
